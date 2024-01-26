@@ -8,6 +8,19 @@
 // 4. Below the function, define and initialize a variable to hold a string.
 // 5. Use console.log(reverseCharacters(myVariableName)); to call the function and verify that it correctly reverses the characters in the string.
 // 6. Optional: Use method chaining to reduce the lines of code within the function.
+let str1 = 'apple';
+let str2 = 'LC101';
+let str3 = 'Capitalized Letters';
+let str4 = 'I love the smell of code in the morning.';
+
+function reverseCharacters(element) { 
+    return element.split('').reverse().join('');
+}
+
+console.log(reverseCharacters(str1));
+console.log(reverseCharacters(str2));
+console.log(reverseCharacters(str3));
+console.log(reverseCharacters(str4));
 
 // Part Two: Reverse Digits
 
@@ -16,6 +29,18 @@
 // 3. If typeof is ’number’, convert the parameter to a string, reverse the characters, then convert it back into a number.
 // 4. Return the reversed number.
 // 5. Be sure to print the result returned by the function to verify that your code works for both strings and numbers. Do this before moving on to the next exercise.
+let num1 = 1234;
+let num2 = 8675309;
+
+function reverseCharacters(element) {
+    if (typeof element === 'number') {
+      return Number(String(element).split('').reverse().join('')); 
+    } else {
+        return element.split('').reverse().join('');  
+    }
+}
+console.log(reverseCharacters(num1));
+console.log(reverseCharacters(num2));
 
 // Part Three: Complete Reversal
 
@@ -29,6 +54,21 @@
 let arrayTest1 = ['apple', 'potato', 'Capitalized Words'];
 let arrayTest2 = [123, 8897, 42, 1168, 8675309];
 let arrayTest3 = ['hello', 'world', 123, 'orange'];
+
+function reverseArray(arr) {
+    let newArray = [];
+    for (let i = 0; i < arr.length; i++) {
+    newArray.push(reverseCharacters(arr[i]));
+    } 
+    let reverseArray = newArray.reverse();
+    return reverseArray;
+ }
+console.log(reverseArray(arrayTest1));
+console.log(reverseArray(arrayTest2));
+console.log(reverseArray(arrayTest3));
+
+
+
 
 // Bonus Missions
 
